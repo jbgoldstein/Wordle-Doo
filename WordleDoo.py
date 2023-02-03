@@ -15,11 +15,11 @@ WordleDoo = WG.WordleGuesser()
 guess_number = 1
 has_won = False
 
-driver = webdriver.Chrome(executable_path="C:/Users/Jack/Documents/chromedriver_win32/chromedriver.exe")
+driver = webdriver.Chrome(executable_path="C:/Users/Jack.Goldstein/Documents/chromedriver_win32/chromedriver.exe")
 driver.get("https://www.nytimes.com/games/wordle/index.html")
 
 # Click off popup on first run
-driver.find_element(By.CLASS_NAME, "Modal-module_modalOverlay__81ZCi").click()
+driver.find_element(By.CLASS_NAME, "Modal-module_closeIcon__TcEKb").click()
 
 while guess_number <= 6 and has_won is not True:
     current_guess = WordleDoo.guess()
@@ -31,7 +31,7 @@ while guess_number <= 6 and has_won is not True:
     driver.find_element(By.XPATH, "//button[@data-key='↵']").click()
     time.sleep(2)
 
-    tile_list = driver.find_elements(By.CLASS_NAME, "Tile-module_tile__3ayIZ")
+    tile_list = driver.find_elements(By.CLASS_NAME, "Tile-module_tile__UWEHN")
 
     number_correct = 0
 
